@@ -7,7 +7,9 @@ const Home = async () => (
   <HydrateClient>
     <main className='bg-gray-500'>
       <Landing />
-      <Projects />
+      <div className='container mx-auto'>
+        <Projects />
+      </div>
     </main>
   </HydrateClient>
 )
