@@ -114,8 +114,8 @@ const projectsCards = [
 ]
 
 const Projects = () => (
-  <section id='myWork' className='mb-12'>
-    <h2 className='text-5xl text-center m-12'>Projects</h2>
+  <section id='myWork' className='mb-24'>
+    <h2 className='text-3xl md:text-5xl text-center m-12'>Projects</h2>
 
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12'>
       {projectsCards.map((project, index) => (
