@@ -33,7 +33,7 @@ const NavBar = () => {
   ]
 
   return (
-    <nav className='flex justify-around items-center min-h-[8vh] bg-gray-800/90 border-b-6 border-gold-500 w-full fixed px-5'>
+    <nav className='flex justify-around items-center min-h-[8vh] bg-gray-800/90 border-b-6 border-gold-500 w-full fixed px-5 z-10'>
       <div className='uppercase tracking-[5px] text-[1em] md:text-xl transition ease-in'>
         <h4>
           <Link className='hover:text-gold-500 hover:scale-90 font-bold' href='/#landing'>Katelin Frederick</Link>

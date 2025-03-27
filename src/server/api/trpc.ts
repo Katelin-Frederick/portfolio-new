@@ -22,7 +22,7 @@ import { ZodError, } from 'zod'
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: { headers: Headers }) => ({...opts,})
+export const createTRPCContext = async (opts: { headers: Headers }) => ({ ...opts, })
 
 /**
  * 2. INITIALIZATION
@@ -33,6 +33,7 @@ export const createTRPCContext = async (opts: { headers: Headers }) => ({...opts
  */
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
+  // eslint-disable-next-line no-restricted-syntax
   errorFormatter({ shape, error, }) {
     return {
       ...shape,
