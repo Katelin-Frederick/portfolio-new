@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { CarouselPrevious, CarouselContent, CarouselItem, CarouselNext, Carousel, } from '~/components/ui/carousel'
 import ProjectCard from '~/components/ProjectCard'
 
 const projectsCards = [
@@ -117,12 +118,25 @@ const Projects = () => (
   <section id='myWork' className='mb-24'>
     <h2 className='text-3xl md:text-5xl text-center m-12'>Projects</h2>
 
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12'>
-      {projectsCards.map((project, index) => (
-        <div key={index} className='flex justify-center items-center flex-col'>
-          <ProjectCard {...project} />
-        </div>
-      ))}
+    <div className='max-w-screen px-12'>
+      <Carousel
+        opts={{
+          align: 'start',
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {projectsCards.map((project, index) => (
+            <CarouselItem key={index} className='xl:basis-1/2 2xl:basis-1/3'>
+              <div className='flex justify-center items-center flex-col'>
+                <ProjectCard {...project} />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   </section>
 )

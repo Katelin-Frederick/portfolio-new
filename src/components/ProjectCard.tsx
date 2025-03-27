@@ -1,6 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+
+import { cn, } from '~/lib/utils'
 
 import { CardDescription, CardContent, CardHeader, CardAction, CardTitle, Card, } from './ui/card'
 import { Button, } from './ui/button'
@@ -27,15 +31,16 @@ const ProjectCard = ({
   skills,
 }: ProjectCardProps) => (
   <>
-    <Image
-      src={image.src}
-      width={288}
-      height={288}
-      alt={image.alt}
-      className='rounded-t-sm border-b-gold-500 border-b-4'
-    />
+    <div className={cn('relative w-[240px] h-[240px] sm:w-[384px] sm:h-[384px]')}>
+      <Image
+        src={image.src}
+        layout='fill'
+        alt={image.alt}
+        className='rounded-t-sm border-b-gold-500 border-b-4'
+      />
+    </div>
 
-    <Card className='w-72 p-1.5 rounded-t-none border-t-0'>
+    <Card className='w-60 sm:w-96 p-1.5 rounded-t-none border-t-0'>
       <CardHeader className='p-0'>
         <CardTitle className='text-center text-2xl py-3'>{title}</CardTitle>
 
@@ -46,10 +51,10 @@ const ProjectCard = ({
 
       <CardAction className='flex justify-around items-center w-full px-1'>
         <Button size='sm' className='mr-3.5'>
-          <Link href={btnLinks.demo}>View Live Demo</Link>
+          <Link href={btnLinks.demo}>View Demo</Link>
         </Button>
         <Button size='sm'>
-          <Link href={btnLinks.code}>View Code on Github</Link>
+          <Link href={btnLinks.code}>View Code</Link>
         </Button>
       </CardAction>
 
