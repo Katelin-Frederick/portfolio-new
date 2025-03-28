@@ -25,10 +25,6 @@ const NavBar = () => {
     {
       href: '/#contact',
       text: 'Contact',
-    },
-    {
-      href: '/#resume',
-      text: 'Resume',
     }
   ]
 
@@ -59,6 +55,16 @@ const NavBar = () => {
             <Link className='hover:text-gold-500 transition ease-in' href={link.href}>{link.text}</Link>
           </li>
         ))}
+
+        <li>
+          <Link
+            className='hover:text-gold-500 transition ease-in'
+            href={'/Resume.pdf'}
+            target='_blank'
+          >
+            Resume
+          </Link>
+        </li>
       </ul>
 
       {menuIsOpen && (
@@ -68,6 +74,16 @@ const NavBar = () => {
               <Link className='hover:text-gold-500 transition ease-in' href={link.href}>{link.text}</Link>
             </li>
           ))}
+
+          <li className='w-full h-full flex justify-center items-center border-b-2 border-gray-100'>
+            <Link
+              className='hover:text-gold-500 transition ease-in'
+              href={'/Resume.pdf'}
+              target='_blank'
+            >
+              Resume
+            </Link>
+          </li>
         </ul>
       )}
     </nav>

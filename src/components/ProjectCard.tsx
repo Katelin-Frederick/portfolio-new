@@ -34,7 +34,7 @@ const ProjectCard = ({
     <div className={cn('relative w-[240px] h-[240px] sm:w-[384px] sm:h-[384px]')}>
       <Image
         src={image.src}
-        layout='fill'
+        fill
         alt={image.alt}
         className='rounded-t-sm border-b-gold-500 border-b-4'
       />
@@ -51,10 +51,10 @@ const ProjectCard = ({
 
       <CardAction className='flex justify-around items-center w-full px-1'>
         <Button size='sm' className='mr-3.5'>
-          <Link href={btnLinks.demo}>View Demo</Link>
+          <Link tabIndex={-1} href={btnLinks.demo}>View Demo</Link>
         </Button>
         <Button size='sm'>
-          <Link href={btnLinks.code}>View Code</Link>
+          <Link tabIndex={-1} href={btnLinks.code}>View Code</Link>
         </Button>
       </CardAction>
 
