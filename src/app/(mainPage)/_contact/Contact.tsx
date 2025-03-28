@@ -33,7 +33,7 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await fetch('/__forms.html', {
+      await fetch('/contact-form.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', },
         body: new URLSearchParams(values).toString(),
