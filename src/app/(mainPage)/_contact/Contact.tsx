@@ -51,7 +51,9 @@ const Contact = () => {
       })
 
       setSuccessModalOpen(true)
+      form.reset()
     } catch (error) {
+      console.log('error:', error)
       setSuccessModalOpen(false)
       setErrorModalOpen(true)
     }
