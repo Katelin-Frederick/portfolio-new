@@ -35,25 +35,22 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await fetch('/__contact-form.html', {
+      const response = await fetch('/__contact-form.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', },
         body: new URLSearchParams(values).toString(),
-      }).then(response => {
-        if (!response.ok) {
-          if (response.status === 405) {
-            throw new Error('Method Not Allowed')
-          } else {
-            throw new Error(`HTTP error! status: ${response.status}`)
-          }
-        }
-        return response.json()
       })
 
-      setSuccessModalOpen(true)
-      form.reset()
+      if (response.ok) {
+        setSuccessModalOpen(true)
+        form.reset()
+      } else if (response.status === 405) {
+        throw new Error('Method Not Allowed')
+      } else {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
     } catch (error) {
-      console.log('error:', error)
+      console.error('Error submitting form:', error)
       setSuccessModalOpen(false)
       setErrorModalOpen(true)
     }
