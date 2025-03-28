@@ -17,6 +17,7 @@ const Contact = () => {
   const [errorModalOpen, setErrorModalOpen] = useState(false)
 
   const formSchema = z.object({
+    contact: z.string(),
     name: z.string().min(2, { message: 'Name must be at least 2 characters.', }),
     email: z.string().email('Must be a valid email'),
     message: z.string().min(2, { message: 'Message must be at least 2 characters.', }),
@@ -25,6 +26,7 @@ const Contact = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      contact: '',
       name: '',
       email: '',
       message: '',
@@ -70,6 +72,18 @@ const Contact = () => {
           className='space-y-8 flex flex-col items-center mt-12'
         >
           <input type='hidden' name='contact' value='Portfolio inquiry form katelin-frederick.com' />
+
+          <FormField
+            control={form.control}
+            name='contact'
+            render={({ field, }) => (
+              <FormItem>
+                <FormControl>
+                  <Input type='hidden' {...field} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
 
           <FormField
             control={form.control}
