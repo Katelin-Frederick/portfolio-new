@@ -33,7 +33,7 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await fetch('/contact-form.html', {
+      await fetch('/__contact-form.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', },
         body: new URLSearchParams(values).toString(),
@@ -64,7 +64,11 @@ const Contact = () => {
       </p>
 
       <Form {...form}>
-        <form name='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='space-y-8 flex flex-col items-center mt-12'>
+        <form
+          name='contact-form'
+          onSubmit={form.handleSubmit(onSubmit)}
+          className='space-y-8 flex flex-col items-center mt-12'
+        >
           <input type='hidden' name='contact' value='Portfolio inquiry form katelin-frederick.com' />
 
           <FormField
