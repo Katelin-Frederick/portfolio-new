@@ -185,7 +185,7 @@ const CarouselPrevious = ({
       variant={variant}
       size={size}
       className={cn(
-        'absolute size-8 rounded-full',
+        'absolute rounded-full',
         orientation === 'horizontal'
           ? 'top-1/2 -left-8 -translate-y-1/2'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -215,7 +215,7 @@ const CarouselNext = ({
       variant={variant}
       size={size}
       className={cn(
-        'absolute size-8 rounded-full',
+        'absolute rounded-full',
         orientation === 'horizontal'
           ? 'top-1/2 -right-8 -translate-y-1/2'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -225,7 +225,7 @@ const CarouselNext = ({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight size={48} />
+      <ArrowRight />
       <span className='sr-only'>Next slide</span>
     </Button>
   )
