@@ -1,5 +1,6 @@
 import { HydrateClient, } from '~/trpc/server'
 
+import Experience from './(mainPage)/_experience/Experience'
 import Projects from './(mainPage)/_projects/Projects'
 import Landing from './(mainPage)/_landing/Landing'
 import Contact from './(mainPage)/_contact/Contact'
@@ -10,8 +11,9 @@ const Home = async () => (
     <main className='bg-gray-500'>
       <Landing />
       <div className='container mx-auto'>
-        <Projects />
         <About />
+        <Experience />
+        <Projects />
         <Contact />
       </div>
     </main>

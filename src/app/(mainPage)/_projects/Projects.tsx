@@ -115,7 +115,7 @@ const projectsCards = [
 ]
 
 const Projects = () => (
-  <section id='myWork' className='mb-24'>
+  <section id='projects' className='mb-24'>
     <h2 className='text-3xl md:text-5xl text-center m-12'>Projects</h2>
 
     <div className='max-w-screen px-12'>

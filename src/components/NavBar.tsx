@@ -2,6 +2,7 @@
 'use client'
 
 import { Menu, X, } from 'lucide-react'
+import { motion, } from 'motion/react'
 import { useState, } from 'react'
 import Link from 'next/link'
 import React from 'react'
@@ -15,12 +16,20 @@ const NavBar = () => {
       text: 'Home',
     },
     {
-      href: '/#myWork',
-      text: 'My Work',
-    },
-    {
       href: '/#aboutMe',
       text: 'About',
+    },
+    {
+      href: '/#experience',
+      text: 'Experience',
+    },
+    {
+      href: '/#skills',
+      text: 'Skills',
+    },
+    {
+      href: '/#projects',
+      text: 'Projects',
     },
     {
       href: '/#contact',
@@ -29,11 +38,11 @@ const NavBar = () => {
   ]
 
   return (
-    <nav className='flex justify-around items-center min-h-[8vh] bg-gray-800/90 border-b-6 border-gold-500 w-full fixed px-5 z-10'>
+    <nav className='flex justify-between items-center min-h-[8vh] bg-gray-800/90 border-b-6 border-gold-500 w-full fixed px-8 z-10'>
       <div className='uppercase tracking-[5px] text-[1em] md:text-xl transition ease-in'>
-        <h4>
-          <Link className='hover:text-gold-500 hover:scale-90 font-bold' href='/#landing'>Katelin Frederick</Link>
-        </h4>
+        <motion.h4 whileHover={{ scale: .95, color: '#965f33', }} transition={{ duration: 0.3, ease: 'easeOut', }}>
+          <Link className='font-bold' href='/#landing'>Katelin Frederick</Link>
+        </motion.h4>
       </div>
 
       <button
@@ -49,14 +58,15 @@ const NavBar = () => {
         )}
       </button>
 
-      <ul className='hidden desktop-nav:flex justify-around w-[50%] lg:w-[40%]'>
+      {/* DESKTOP MENU */}
+      <ul className='hidden desktop-nav:flex justify-around w-[60%]'>
         {navigationLinks.map((link, index) => (
-          <li key={index}>
+          <motion.li key={index} whileHover={{ scale: .95, color: '#965f33', }} transition={{ duration: 0.3, ease: 'easeOut', }}>
             <Link className='hover:text-gold-500 transition ease-in' href={link.href}>{link.text}</Link>
-          </li>
+          </motion.li>
         ))}
 
-        <li>
+        <motion.li whileHover={{ scale: .95, color: '#965f33', }} transition={{ duration: 0.3, ease: 'easeOut', }}>
           <Link
             className='hover:text-gold-500 transition ease-in'
             href={'/Resume.pdf'}
@@ -64,25 +74,41 @@ const NavBar = () => {
           >
             Resume
           </Link>
-        </li>
+        </motion.li>
       </ul>
 
+      {/* MOBILE MENU */}
       {menuIsOpen && (
         <ul className='absolute right-0 h-[92vh] top-[8vh] desktop-nav:hidden flex flex-col items-center w-[50%] bg-gray-800/90'>
           {navigationLinks.map((link, index) => (
-            <li key={index} className='w-full h-full flex justify-center items-center border-b-2 border-gray-100'>
-              <Link className='hover:text-gold-500 transition ease-in' href={link.href}>{link.text}</Link>
+            <li
+              key={index}
+              className='w-full h-full flex justify-center items-center border-b-2 border-gray-100'
+            >
+              <motion.div
+                whileHover={{ color: '#965f33', }}
+                transition={{ duration: 0.3, ease: 'easeOut', }}
+              >
+                <Link className='ease-in' href={link.href}>{link.text}</Link>
+              </motion.div>
             </li>
           ))}
 
-          <li className='w-full h-full flex justify-center items-center border-b-2 border-gray-100'>
-            <Link
-              className='hover:text-gold-500 transition ease-in'
-              href={'/Resume.pdf'}
-              target='_blank'
+          <li
+            className='w-full h-full flex justify-center items-center border-b-2 border-gray-100'
+          >
+            <motion.div
+              whileHover={{ color: '#965f33', }}
+              transition={{ duration: 0.3, ease: 'easeOut', }}
             >
-              Resume
-            </Link>
+              <Link
+                className='ease-in'
+                href={'/Resume.pdf'}
+                target='_blank'
+              >
+                Resume
+              </Link>
+            </motion.div>
           </li>
         </ul>
       )}

@@ -8,7 +8,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   /***** Breakpoints *****/
-  --breakpoint-desktop-nav: 50rem;
+  --breakpoint-desktop-nav: 65rem;
 
   /***** Colors *****/
   /* Grays */
@@ -139,4 +139,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.container {
+ @apply max-w-[65rem];
+ @apply px-5;
 }
