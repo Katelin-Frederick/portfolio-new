@@ -5,6 +5,8 @@ import { oxygen } from '~/fonts'
 
 import { TRPCReactProvider, } from '~/trpc/react'
 import NavBar from '~/components/NavBar'
+import Footer from '~/components/Footer'
+import { cn } from '~/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Create T3 App',
@@ -14,10 +16,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang='en' className={`${oxygen.className}`}>
-      <body>
+    <html lang='en' className={cn(`${oxygen.className}`, 'scroll-smooth')}>
+      <body className='flex flex-col min-h-screen'>
         <NavBar />
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>{
+          <div className='flex-1'>
+            {children}
+          </div>
+        }</TRPCReactProvider>
+        <Footer />
       </body>
     </html>
   )

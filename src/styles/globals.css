@@ -16,6 +16,26 @@
   --color-gray-500: #202024;
   --color-gray-800: #111111;
 
+  --color-html5: #E34F26;
+  --color-javaScript: #F7DF1E;
+  --color-typeScript: #3178C6;
+  --color-css3: #1572B6;
+  --color-react: #61DAFB;
+  --color-next: #000000;
+  --color-tailwind: #06B6D4;
+  --color-node: #5FA04E;
+  --color-express: #000000;
+  --color-cloudwatch: #FF4F8B;
+  --color-cognito: #DD344C;
+  --color-dynamo: #4053D6;
+  --color-s3: #569A31;
+  --color-lambda: #FF9900;
+  --color-bitbucket: #0052CC;
+  --color-jira: #0052CC;
+  --color-confluence: #172B4D;
+  --color-github: #181717;
+  --color-git: #F05032;
+
   /* Golds */
   --color-gold-500: #965f33;
 }

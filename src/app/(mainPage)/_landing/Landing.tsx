@@ -2,6 +2,7 @@
 
 import { Linkedin, Twitter, Github, } from 'lucide-react'
 import { useInView, motion, } from 'motion/react'
+import Link from 'next/link'
 import React from 'react'
 
 import { Button, } from '~/components/ui/button'
@@ -67,14 +68,20 @@ const Landing = () => {
               initial={{ x: -1000, }}
               animate={{ x: 0, }}
               transition={{ duration: 0.8, ease: 'easeOut', }}>
-              <Button size='lg' className='mb-5 md:mr-6 md:mb-0'>View Projects</Button>
+              <Button size='lg' className='mb-5 md:mr-6 md:mb-0'>
+                <Link href='/#projects'>View Projects</Link>
+              </Button>
             </motion.div>
 
             <motion.div
               initial={{ x: 1000, }}
               animate={{ x: 0, }}
               transition={{ duration: 0.8, ease: 'easeOut', }}>
-              <Button size='lg' className='mb-5 md:mr-6 md:mb-0'>View Resume</Button>
+              <Button size='lg' className='mb-5 md:mr-6 md:mb-0'>
+                <Link href='/Resume.pdf' target='_blank'>
+                  View Resume
+                </Link>
+              </Button>
             </motion.div>
           </div>
 
@@ -86,7 +93,13 @@ const Landing = () => {
               whileHover={socialLinkAnimation}
             >
               <Button className='rounded-full h-auto p-3' size='lg'>
-                <Github color='#9E95B7' size={32} />
+                <a
+                  href='https://github.com/Katelin-Frederick'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <Github color='#9E95B7' size={32} />
+                </a>
               </Button>
             </motion.li>
 
@@ -97,7 +110,13 @@ const Landing = () => {
               whileHover={socialLinkAnimation}
             >
               <Button className='rounded-full h-auto p-3' size='lg'>
-                <Linkedin color='#0D597F' size={32} />
+                <a
+                  href='https://www.linkedin.com/in/katelin-frederick'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <Linkedin color='#0D597F' size={32} />
+                </a>
               </Button>
             </motion.li>
 
@@ -108,7 +127,13 @@ const Landing = () => {
               whileHover={socialLinkAnimation}
             >
               <Button className='rounded-full h-auto p-3' size='lg'>
-                <Twitter color='#40AEF0' size={32} />
+                <a
+                  href='https://x.com/KatieNFrederick'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <Twitter color='#40AEF0' size={32} />
+                </a>
               </Button>
             </motion.li>
           </ul>
@@ -119,7 +144,7 @@ const Landing = () => {
             animate={{ y: 0, }}
             transition={{ duration: 0.8, ease: 'easeOut', }}
           >
-            Email: <a className='text-white underline hover:text-gold-500' href='mailto:k.frederick94@gmail.com'>k.frederick94@gmail.com</a>
+            Email: <Link className='text-white underline hover:text-gold-500' href='mailto:k.frederick94@gmail.com'>k.frederick94@gmail.com</Link>
           </motion.p>
         </header>
       </div>

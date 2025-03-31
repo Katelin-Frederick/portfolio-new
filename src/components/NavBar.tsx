@@ -34,6 +34,10 @@ const NavBar = () => {
     {
       href: '/#contact',
       text: 'Contact',
+    },
+    {
+      href: '/blog',
+      text: 'Blog',
     }
   ]
 
@@ -59,7 +63,7 @@ const NavBar = () => {
       </button>
 
       {/* DESKTOP MENU */}
-      <ul className='hidden desktop-nav:flex justify-around w-[60%]'>
+      <ul className='hidden desktop-nav:flex justify-around w-[65%]'>
         {navigationLinks.map((link, index) => (
           <motion.li key={index} whileHover={{ scale: .95, color: '#965f33', }} transition={{ duration: 0.3, ease: 'easeOut', }}>
             <Link className='hover:text-gold-500 transition ease-in' href={link.href}>{link.text}</Link>

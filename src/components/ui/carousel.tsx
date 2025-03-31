@@ -173,7 +173,7 @@ const CarouselItem = ({ className, ...props }: React.ComponentProps<'div'>) => {
 
 const CarouselPrevious = ({
   className,
-  variant = 'link',
+  variant = 'primary',
   size = 'icon',
   ...props
 }: React.ComponentProps<typeof Button>) => {
@@ -203,7 +203,7 @@ const CarouselPrevious = ({
 
 const CarouselNext = ({
   className,
-  variant = 'link',
+  variant = 'primary',
   size = 'icon',
   ...props
 }: React.ComponentProps<typeof Button>) => {
