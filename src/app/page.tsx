@@ -9,9 +9,9 @@ import About from './(mainPage)/_about/About'
 
 const Home = async () => (
   <HydrateClient>
-    <main className='bg-gray-500'>
+    <main className='bg-gray-500 snap-x'>
       <Landing />
-      <div className='sm:container mx-auto'>
+      <div className='sm:container mx-auto snap-x'>
         <About />
         <Experience />
         <Skills />

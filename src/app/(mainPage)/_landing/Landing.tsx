@@ -31,12 +31,11 @@ const Landing = () => {
   return (
     <section
       id='landing'
-      className='h-screen desktop-nav:h-[80vh] flex justify-center items-center overflow-hidden text-center border-b-6 border-gold-500'
+      className='h-screen desktop-nav:h-[80vh] flex justify-center items-center overflow-hidden text-center border-b-6 border-gold-500 snap-start'
       style={backgroundStyles}
     >
       <div id='landingOverlay' className='bg-black/50 w-full h-full flex justify-center items-center'>
         <header>
-
           {title.map((letter, i) => (
             <motion.span
               initial={{ opacity: 0, }}
